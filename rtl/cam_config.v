@@ -1,17 +1,6 @@
 `timescale 1ns / 1ps
 `default_nettype none
 
-
-/*
- *  Begins sending cam_rom data to I2C master after
- *  i_config_start is asserted and I2C master is ready.
- *
- *  Creates a delay using a timer, which is used after sending data to
- *  reset SCCB registers.
- *
- *  Signals a cam initialization done signal for modules downstream.
- */
-
 module cam_config #(
     parameter CLK_F = 27_000_000, // 27 MHz clock (Tang Nano 9k)
     parameter CAM_I2C_ADDR = 8'h42 // Camera I2C address (typically 0x42 for OV cameras)
